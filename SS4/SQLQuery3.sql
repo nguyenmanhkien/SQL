@@ -1,0 +1,1 @@
+create type usertype from varchar(20) not NULL
