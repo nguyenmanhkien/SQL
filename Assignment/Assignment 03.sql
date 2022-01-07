@@ -77,3 +77,14 @@ GO
 ALTER TABLE dbo.Thongtin
 ADD Point int
 GO
+
+-- Đặt chỉ mục (Index) cho cột Tên khách hàng của bảng chứa thông tin khách hàng
+CREATE CLUSTERED INDEX IX_Namee
+ON Thongtin(Namee)
+
+-- View
+CREATE VIEW V_Khachhang AS
+SELECT Namee,Addresss
+FROM Thongtin
+GO
+SELECT * FROM V_Khachhang
