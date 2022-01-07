@@ -97,3 +97,15 @@ ALTER TABLE dbo.theohang
 ADD CONSTRAINT Tel CHECK (Tel LIKE '0%')
 GO
 
+-- Thiết lập chỉ mục (Index) cho các cột sau:
+CREATE CLUSTERED INDEX ProductIndex
+ON sanpham(Product)
+
+CREATE CLUSTERED INDEX ProductDescriptionIndex
+ON sanpham(Product)
+
+-- View_SanPham: với các cột Mã sản phẩm, Tên sản phẩm, Giá bán
+CREATE VIEW KT AS
+SELECT ID, Product, Price
+FROM sanpham
+GO
