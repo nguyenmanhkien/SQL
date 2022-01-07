@@ -55,4 +55,20 @@ WHERE ProductID = 'KT123'
 SELECT COUNT(*) FROM dbo.Phieusp
 WHERE ProductID > 0
 
+-- Index
+CREATE CLUSTERED INDEX IX_Namee
+ON  Phieusp(Namee)
+
+-- View
+CREATE VIEW V_Contact_Info AS
+SELECT FirstName, MiddleName, LastName
+FROM Person.Person
+GO
+
+CREATE VIEW V_SP AS
+SELECT ProductID, DateSX, Product
+FROM dbo.Phieusp
+
+SELECT * FROM V_SP
+
 
